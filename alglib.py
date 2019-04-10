@@ -27,7 +27,7 @@ class Vector2():
         if type(number) == int or type(number) == float:
             return Vector2(number * self.x, number * self.y)
         else:
-            raise TypeError(f"[!] bad type : { other.__name__ } must be type 'int' or 'float'")
+            raise TypeError(f"[!] bad type : { number.__name__ } must be type 'int' or 'float'")
     
     def __rmul__(self, number):
         return self.__mul__(number)
@@ -67,7 +67,10 @@ class Vector2():
         return f"<x : { self.x }  y : { self.y }>"
 
 
-
+    ##################################################################
+    #type convertion methods 
+    def __tuple__(self):
+        return self.x, self.y 
 
 
 
